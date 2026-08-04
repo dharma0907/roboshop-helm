@@ -1,0 +1,13 @@
+we arfe usign mongodb as statefule set so we need to install EBS drivers
+
+EBS
+1. install drivers first
+2. before runnig add iam role of node to EBSCSIDRIVER policy and then run below command
+if we don't add policy then we will get error in ebs driver install.
+
+3. create storage class
+
+4.helm upgrade --install ebs-csi-driver \
+    --namespace kube-system --version 2.62.0 \
+    aws-ebs-csi-driver/aws-ebs-csi-driver
+    
